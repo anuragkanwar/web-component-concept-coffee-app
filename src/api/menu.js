@@ -1,4 +1,4 @@
-{
+export const menu = {
   "menus": [
     {
       "displayOrder": 1,

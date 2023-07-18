@@ -2,7 +2,8 @@ import { css, html, LitElement } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { Router } from "../../router/Router.ts";
 import { query } from 'lit/decorators/query.js';
-
+import logoText from "../../assets/images/logo-text.png";
+import tippy from 'tippy.js';
 
 @customElement("ck-nav-menu")
 export default class CkNavMenu extends LitElement {
@@ -86,6 +87,16 @@ export default class CkNavMenu extends LitElement {
       ev.preventDefault();
       Router.go("/", location.pathname);
     }
+  }
+
+  handleTooltip(ev: Event) {
+
+    if (!ev.target) return;
+    // @ts-ignore
+    tippy(ev.target, {
+      content: 'Frontend Concept Only',
+      arrow: true,
+    });
   }
 
   static styles =
@@ -300,7 +311,7 @@ export default class CkNavMenu extends LitElement {
             <div class="logo">
                 <a class="no-border" href="/">
                     <img class="logo-img"
-                         src="/src/assets/images/logo-text.png"
+                         src=${logoText}
                          alt="LOGO">
                 </a>
             </div>
@@ -318,7 +329,7 @@ export default class CkNavMenu extends LitElement {
                         <li><a @click=${this._handleRoute} class="nlink" href="/catalog">Catalog</a></li>
                     </ul>
                     <ul class="user-actions flex">
-                        <li @click=${this.handleSpecialRoute} class="ck-user">
+                        <li @mouseover=${this.handleTooltip} class="ck-user">
                             <ion-icon name="person-outline"></ion-icon>
                         </li>
                         <li @click=${this.handleSpecialRoute} class="ck-cart">

@@ -27,7 +27,6 @@ export default class CkSideMenuCategory extends LitElement {
 
   handleSubCatClick(ev: Event) {
     ev.stopPropagation();
-    console.log("clicked");
     const content2 = document.querySelector("ck-catalog");
     if (!content2) return;
     if (!content2.shadowRoot) return;
@@ -106,13 +105,13 @@ export default class CkSideMenuCategory extends LitElement {
       .category-sub-cat li.active {
         color: var(--my-selected-orange);
       }
-      
-      .name-content{
+
+      .name-content {
         display: inline-flex;
         justify-content: center;
         align-items: center;
       }
-      
+
       .category-name div span:hover {
         cursor: pointer;
       }
@@ -129,8 +128,8 @@ export default class CkSideMenuCategory extends LitElement {
       .hidden {
         display: none;
       }
-      
-      .toggle-icon, ion-icon{
+
+      .toggle-icon, ion-icon {
         display: inline-flex;
         justify-content: center;
         align-items: center;

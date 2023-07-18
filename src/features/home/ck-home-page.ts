@@ -1,7 +1,8 @@
 import { css, html, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
 import { Router } from "../../router/Router.ts";
-
+import leftHand from "../../assets/images/couvee-left-hand3.png";
+import rightHand from "../../assets/images/couvee-right-hand2.png";
 
 @customElement("ck-home-page")
 export default class CkHomePage extends LitElement {
@@ -196,10 +197,10 @@ export default class CkHomePage extends LitElement {
                         </svg>
                     </div>
                     <div class="img-container img-l">
-                        <img src="/src/assets/images/couvee-left-hand3.png" alt="">
+                        <img src=${leftHand} alt="">
                     </div>
                     <div class="img-container img-r">
-                        <img src="/src/assets/images/couvee-right-hand2.png" alt="">
+                        <img src=${rightHand} alt="">
                     </div>
                 </div>
             </div>

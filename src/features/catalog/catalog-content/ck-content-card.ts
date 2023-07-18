@@ -53,12 +53,6 @@ export default class CkContentCard extends LitElement {
         pointer-events: none;
       }
 
-      button, select {
-        padding: 0.2em 1em;
-        border: 2px solid black;
-        cursor: pointer;
-        border-radius: 5px;
-      }
 
       body {
         font-family: 'Inter', sans-serif;
@@ -102,6 +96,7 @@ export default class CkContentCard extends LitElement {
         overflow: hidden;
         width: 70%;
         position: absolute;
+        background-image: url("/public/placeholder.webp");
         top: -10%;
         left: -10%;
         clip-path: circle(50%);
@@ -152,6 +147,15 @@ export default class CkContentCard extends LitElement {
         justify-content: center;
         align-items: center;
         gap: 1em;
+      }
+
+      .counter > button {
+        border-radius: 100%;
+        background: transparent;
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
       }
 
@@ -247,17 +251,18 @@ export default class CkContentCard extends LitElement {
                     <h2 class="product-price">₹ ${this.data.price}</h2>
                 </div>
                 <div class="counter">
-                    <div
+                    <button
                             catid=${this.catId} subcatid=${this.subCatId} productId=${this.productId}
                             @click=${this.decrement} class="counter-btn">
                         <ion-icon name="remove-circle-outline"></ion-icon>
-                    </div>
+                        <!--                        +-->
+                    </button>
                     <div class="counter-count">${this._count}</div>
-                    <div
+                    <button
                             catid=${this.catId} subcatid=${this.subCatId} productId=${this.productId}
                             @click=${this.increment} class="counter-btn">
                         <ion-icon name="add-circle-outline"></ion-icon>
-                    </div>
+                    </button>
                     <div>
                         <ion-icon name="cart-outline"></ion-icon>
                     </div>

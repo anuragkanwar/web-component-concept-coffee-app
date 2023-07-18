@@ -101,13 +101,7 @@ export default class CkCart extends LitElement {
       path, i, svg {
         pointer-events: none;
       }
-
-      button, select {
-        padding: 0.2em 1em;
-        border: 2px solid black;
-        cursor: pointer;
-        border-radius: 5px;
-      }
+      
 
       body {
         font-family: 'Alegreya Sans', sans-serif;
@@ -194,8 +188,18 @@ export default class CkCart extends LitElement {
         text-align: center;
       }
 
+      .counter > button {
+        border-radius: 100%;
+        background: transparent;
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+
       .counter > div {
-        font-size: 1.625rem;
+        font-size: 2rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -336,13 +340,13 @@ export default class CkCart extends LitElement {
                                 <div class="cart-l-data">
                                     <span class="item-name">${getProduct(item).name}</span>
                                     <div class="counter">
-                                        <div key=${item} @click=${this.decrement} class="counter-btn">
+                                        <button key=${item} @click=${this.decrement} class="counter-btn">
                                             <ion-icon name="remove-circle-outline"></ion-icon>
-                                        </div>
+                                        </button>
                                         <div class="counter-count">${data[item]}</div>
-                                        <div key=${item} @click=${this.increment} class="counter-btn">
+                                        <button key=${item} @click=${this.increment} class="counter-btn">
                                             <ion-icon name="add-circle-outline"></ion-icon>
-                                        </div>
+                                        </button>
                                     </div>
                                 </div>
                                 <div class="cart-r-data">

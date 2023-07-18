@@ -68,16 +68,21 @@ export default class CkButton extends LitElement {
         background: var(--grad-2, linear-gradient(270deg, #E66A8F 0%, #7E76DB 100%));
         margin-top: 4rem;
       }
+
+      button > * {
+        pointer-events: none;
+      }
     `
   ];
+
 
   render() {
 
     return html`
         <button class=${this.type}>
-            <slot name="prefix"></slot>
-            <slot name="content"></slot>
-            <slot name="suffix"></slot>
+            <slot class="prefix" name="prefix"></slot>
+            <slot class="content" name="content"></slot>
+            <slot class="suffix" name="suffix"></slot>
         </button>
     `;
   }
