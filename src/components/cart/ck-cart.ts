@@ -308,6 +308,28 @@ export default class CkCart extends LitElement {
       ::-webkit-scrollbar-corner {
         background: transparent;
       }
+    `,
+
+    css`
+      @media only screen and (max-width: 1000px) {
+        .cart {
+          min-width: 50vw;
+        }
+      }
+
+      @media only screen and (max-width: 700px) {
+
+        .cart {
+          min-width: 65vw;
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        .cart {
+          min-width: 90vw;
+        }
+      }
+
     `
   ];
 

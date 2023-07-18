@@ -63,29 +63,9 @@ export default class CkHomePage extends LitElement {
         top: 0;
         right: 0;
         width: 100%;
-        min-height: 100vh;
+        height: 100%;
         //padding: 5rem;
-        margin-top: 86px;
-      }
-
-      .showcase video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.8;
-      }
-
-      .vod-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #1e1e1e;
-        mix-blend-mode: overlay;
+        padding-top: 86px;
       }
 
       .wrapper {
@@ -141,13 +121,6 @@ export default class CkHomePage extends LitElement {
         width: 100%;
       }
 
-      .img-container svg {
-        position: absolute;
-        right: 0;
-        width: 100%;
-        transform: scale(0.3);
-      }
-
       .img-container > img {
         object-fit: cover;
       }
@@ -162,6 +135,49 @@ export default class CkHomePage extends LitElement {
         }
       }
 
+    `,
+    css`
+
+      @media only screen and (max-width: 1000px) {
+
+        .wrapper {
+          flex-direction: column;
+          height: 100%;
+          justify-content: center;
+        }
+
+        .content {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 1rem;
+        }
+
+        .content h1,
+        .content h2 {
+          font-size: 9vw;
+        }
+
+        .hero-img-container {
+          position: relative;
+          flex-basis: 50%;
+          display: none;
+        }
+
+        .hero-img-container > * {
+          position: absolute;
+          top: 0;
+          right: 0;
+
+        }
+
+        .svg-wrappper {
+          display: none;
+        }
+
+      }
+
     `
   ];
 
@@ -171,10 +187,12 @@ export default class CkHomePage extends LitElement {
         <section class="showcase">
             <div class="wrapper">
                 <div class="content">
-                    <h2>WE BELIEVE</h2>
-                    <h1>COFFEE</h1>
-                    <h2>IS THE SIMPLEST</h2>
-                    <h1>PLEASURE</h1>
+                    <div>
+                        <h2>WE BELIEVE</h2>
+                        <h1>COFFEE</h1>
+                        <h2>IS THE SIMPLEST</h2>
+                        <h1>PLEASURE</h1>
+                    </div>
                     <ck-s-button @click=${this.handleMainClick}>
                         <span slot="content">Choose Coffee</span>
                         <span slot="suffix">→</span>

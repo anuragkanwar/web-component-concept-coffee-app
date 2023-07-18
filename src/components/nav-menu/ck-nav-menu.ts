@@ -240,8 +240,9 @@ export default class CkNavMenu extends LitElement {
             padding: min(20vh, 10rem) 2rem;
             z-index: 1000;
             transition: all ease-in-out 0.3s;
-            background: hsl(0, 0%, 100%, 0.1);
+            background: hsla(0, 0%, 96%, 0.1);
             backdrop-filter: blur(1rem);
+            height: 100%;
           }
 
           .primary-navigation[data-visible='true'] {

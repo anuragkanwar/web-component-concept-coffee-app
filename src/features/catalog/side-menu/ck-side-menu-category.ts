@@ -134,6 +134,11 @@ export default class CkSideMenuCategory extends LitElement {
         justify-content: center;
         align-items: center;
       }
+    `,
+    css`
+      @media only screen and (max-width: 700px) {
+        
+      }
     `
   ];
 

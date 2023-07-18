@@ -50,6 +50,7 @@ export class CkSideMenu extends LitElement {
     `,
     css`
       :host {
+        position: relative;
         flex-basis: 20%;
         flex-shrink: 0;
       }
@@ -60,12 +61,19 @@ export class CkSideMenu extends LitElement {
         display: flex;
         flex-direction: column;
         gap: 1em;
+        flex-shrink: 1;
       }
 
       .side-menu {
         overflow-y: scroll;
-        //height: calc(100vh - 83.200px);
         height: 100%;
+        position: relative;
+      }
+      
+    `,
+    css`
+      @media only screen and (max-width: 700px) {
+       
       }
     `,
     css`
@@ -73,32 +81,40 @@ export class CkSideMenu extends LitElement {
         width: 5px;
         height: 5px;
       }
+
       ::-webkit-scrollbar-button {
         width: 0px;
         height: 0px;
       }
+
       ::-webkit-scrollbar-thumb {
         background: #1f3933;
         border: 1px solid #ffffff;
         border-radius: 0px;
       }
+
       ::-webkit-scrollbar-thumb:hover {
         background: #000000;
       }
+
       ::-webkit-scrollbar-thumb:active {
         background: #1f3933;
       }
+
       ::-webkit-scrollbar-track {
         background: #f6eee1;
         border: 0px none #ffffff;
         border-radius: 43px;
       }
+
       ::-webkit-scrollbar-track:hover {
         background: #f6eee1;
       }
+
       ::-webkit-scrollbar-track:active {
         background: #f6eee1;
       }
+
       ::-webkit-scrollbar-corner {
         background: transparent;
       }
