@@ -290,6 +290,7 @@ export class CkCheckoutPage extends LitElement {
 
       .content {
         display: flex;
+        flex-direction: row-reverse;
         justify-content: space-between;
         align-items: flex-start;
         margin-top: 2rem;
@@ -340,6 +341,25 @@ export class CkCheckoutPage extends LitElement {
         align-items: center;
         gap: 1rem;
       }
+    `,
+    css`
+      @media only screen and (max-width: 1000px) {
+
+        .checkout {
+          height: calc(100vh - 83.2px);
+          overflow-y: scroll;
+        }
+
+        .content {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .cart {
+          max-width: 500px;
+          width: 100%;
+        }
+      }
     `
   ];
 
@@ -362,22 +382,6 @@ export class CkCheckoutPage extends LitElement {
                 <a @click=${this.goToMenu} class="back" href="/catalog">Back to menu</a>
             </div>
             <div class="content">
-                <div class="delivery-data">
-                    <h4 class="subtitle">Shipping Details</h4>
-                    <form class="form" action="">
-                        <div class="width-2">
-                            <input class="input" placeholder="First Name" name="name" type="text"/>
-                            <input class="input" placeholder="Last Name" name="name" type="text"/>
-                        </div>
-                        <input class="input" placeholder="Address Line-1" type="text"/>
-                        <input class="input" placeholder="Address Line-2" type="text"/>
-                        <input class="input" placeholder="Address Line-3" type="text"/>
-                        <input class="input" placeholder="Phone Number" type="tel"/>
-                        <div class="checkout-btn order-btn">PLACE ORDER</div>
-                    </form>
-
-                    <div class="subtitle">Info will be shared to you by Whatsapp / Call</div>
-                </div>
                 <div class="cart">
                     <h2 class="cart-heading">CART</h2>
                     <div class="cart-main">
@@ -420,6 +424,22 @@ export class CkCheckoutPage extends LitElement {
                         <div class="checkout-price">${totalPrice}</div>
                     </div>
 
+                </div>
+                <div class="delivery-data">
+                    <h4 class="subtitle">Shipping Details</h4>
+                    <form class="form" action="">
+                        <div class="width-2">
+                            <input class="input" placeholder="First Name" name="name" type="text"/>
+                            <input class="input" placeholder="Last Name" name="name" type="text"/>
+                        </div>
+                        <input class="input" placeholder="Address Line-1" type="text"/>
+                        <input class="input" placeholder="Address Line-2" type="text"/>
+                        <input class="input" placeholder="Address Line-3" type="text"/>
+                        <input class="input" placeholder="Phone Number" type="tel"/>
+                        <div class="checkout-btn order-btn">PLACE ORDER</div>
+                    </form>
+
+                    <div class="subtitle">Info will be shared to you by Whatsapp / Call</div>
                 </div>
             </div>
         </section>
